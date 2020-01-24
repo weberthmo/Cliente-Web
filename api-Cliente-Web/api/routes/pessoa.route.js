@@ -34,7 +34,7 @@ pessoaRoutes.route('/').get(function (req, res) {
 pessoaRoutes.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
   Pessoa.findById(id, function (err, pessoa){
-      res.json(pessoa);
+      res.json(pessoa); 
   });
 });
 
