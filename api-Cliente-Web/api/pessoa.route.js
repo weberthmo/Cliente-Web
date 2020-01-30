@@ -1,5 +1,3 @@
-// pessoa.route.js
-
 const express = require('express');
 const pessoaRoutes = express.Router();
 
@@ -7,7 +5,7 @@ const pessoaRoutes = express.Router();
 let Pessoa = require('./pessoa.model');
 
 // Defined store route
-pessoa.route('/add').post(function (req, res) {
+pessoaRoutes.route('/add').post(function (req, res) {
   let pessoa = new Pessoa(req.body);
   pessoa.save()
     .then(pessoa => {
@@ -34,7 +32,7 @@ pessoaRoutes.route('/').get(function (req, res) {
 pessoaRoutes.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
   Pessoa.findById(id, function (err, pessoa){
-      res.json(pessoa); 
+      res.json(pessoa);
   });
 });
 
